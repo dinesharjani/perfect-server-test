@@ -1,9 +1,22 @@
 # Copyright (C) 2016 PerfectlySoft Inc.
+# Copyright (C) 2017 dh Software
 # Author: Shao Miller <swiftcode@synthetel.com>
+# Author: Dinesh Harjani <dinesharjani@gmail.com>
 
-FROM perfectlysoft/ubuntu1510
-RUN /usr/src/Perfect-Ubuntu/install_swift.sh --sure
-RUN git clone https://github.com/PerfectlySoft/PerfectTemplate /usr/src/PerfectTemplate
-WORKDIR /usr/src/PerfectTemplate
+FROM perfectlysoft/perfectassistant
+RUN apt-get update && apt-get install -y \
+    libssl-dev \
+    uuid-dev
+ADD . /PerfectServerTest
+WORKDIR /PerfectServerTest
 RUN swift build
-CMD .build/debug/PerfectTemplate --port 80
+ENTRYPOINT [".build/debug/PerfectServerTest"]
+
+# Build release version
+#RUN swift build --configuration release
+
+# If you wanted to base this off the official Swift docker
+#FROM swiftdocker/swift
+
+# Not necessary when using pperfectlysoft/perfectassistant
+#RUN /usr/src/Perfect-Ubuntu/install_swift.sh --sure

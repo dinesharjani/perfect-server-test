@@ -1,0 +1,9 @@
+1. docker build -t perfect-server-test .
+2. docker run --dns=8.8.8.8 -p 8080:8080 -p 8181:8181 -d perfect-server-test
+3. Open localhost:8080 or localhost:8181 in your browser
+
+# Interactive mode
+docker run -it perfect-server-test /bin/bash
+
+# Check docker machine IP address
+docker-machine ip perfect-server-test

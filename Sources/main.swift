@@ -21,24 +21,23 @@ import PerfectLib
 import PerfectHTTP
 import PerfectHTTPServer
 
+struct PerfectTestServer {
+    static let Name = "localhost"
+    static let PrimaryApiPort = 8080
+    static let RedirectApiPort = 8181
+}
+
 // An example request handler.
 // This 'handler' function can be referenced directly in the configuration below.
 func handler(data: [String:Any]) throws -> RequestHandler {
 	return {
 		request, response in
-		// Respond with a simple message.
+		response.status = .ok
 		response.setHeader(.contentType, value: "text/html")
 		response.appendBody(string: "<html><title>Hello, world!</title><body>Hello, world!</body></html>")
-		// Ensure that response.completed() is called when your processing is done.
 		response.completed()
 	}
 }
-
-// Configuration data for two example servers.
-// This example configuration shows how to launch one or more servers 
-// using a configuration dictionary.
-
-let port1 = 8080, port2 = 8181
 
 let confData = [
 	"servers": [
@@ -48,8 +47,8 @@ let confData = [
 		//		directory (which must be located in the current working directory).
 		//	* Performs content compression on outgoing data when appropriate.
 		[
-			"name":"localhost",
-			"port":port1,
+			"name":PerfectTestServer.Name,
+			"port":PerfectTestServer.PrimaryApiPort,
 			"routes":[
 				["method":"get", "uri":"/", "handler":handler],
 				["method":"get", "uri":"/**", "handler":PerfectHTTPServer.HTTPHandler.staticFiles,
@@ -67,11 +66,11 @@ let confData = [
 		// Configuration data for another server which:
 		//	* Redirects all traffic back to the first server.
 		[
-			"name":"localhost",
-			"port":port2,
+			"name":PerfectTestServer.Name,
+			"port":PerfectTestServer.RedirectApiPort,
 			"routes":[
 				["method":"get", "uri":"/**", "handler":PerfectHTTPServer.HTTPHandler.redirect,
-				 "base":"http://localhost:\(port1)"]
+				 "base":"http://\(PerfectTestServer.Name):\(PerfectTestServer.PrimaryApiPort)"]
 			]
 		]
 	]

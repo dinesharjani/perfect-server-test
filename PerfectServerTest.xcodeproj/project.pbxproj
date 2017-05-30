@@ -1083,6 +1083,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AAD6E9CF1EDD947D00F21494 /* Calendar.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Calendar.plist; sourceTree = "<group>"; };
 		OBJ_100 /* aes_core.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = aes_core.c; sourceTree = "<group>"; };
 		OBJ_101 /* aes_ctr.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = aes_ctr.c; sourceTree = "<group>"; };
 		OBJ_102 /* aes_ecb.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = aes_ecb.c; sourceTree = "<group>"; };
@@ -1961,6 +1962,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AAD6E9CE1EDD945C00F21494 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AAD6E9CF1EDD947D00F21494 /* Calendar.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		OBJ_10 /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
@@ -2072,16 +2081,16 @@
 			path = ".build/checkouts/Perfect-HTTP.git--6392294032632002019/Sources";
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
+				AAD6E9CE1EDD945C00F21494 /* Resources */,
 				OBJ_7 /* Sources */,
 				OBJ_9 /* Tests */,
 				OBJ_10 /* Dependencies */,
 				OBJ_775 /* Products */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_57 /* PerfectNet 2.1.8 */ = {
@@ -3113,7 +3122,7 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_775 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";

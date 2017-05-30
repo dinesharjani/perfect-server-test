@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>formula-one</key>
+	<dict>
+		<key>Australia</key>
+		<dict>
+			<key>Promoter Name</key>
+			<string>2017 Formula 1 Rolex Australian Grand Prix</string>
+			<key>Race</key>
+			<date>2017-03-26T11:54:33Z</date>
+		</dict>
+		<key>China</key>
+		<dict>
+			<key>Promoter Name</key>
+			<string>2017 Formula 1 Heineken Chinese Grand Prix</string>
+			<key>Race</key>
+			<date>2017-04-09T11:54:33Z</date>
+		</dict>
+		<key>Baharain</key>
+		<dict>
+			<key>Promoter Name</key>
+			<string>2017 Formula 1 Gulf Air Bahrain Grand Prix</string>
+			<key>Race</key>
+			<date>2017-04-16T11:54:33Z</date>
+		</dict>
+		<key>Russia</key>
+		<dict>
+			<key>Promoter Name</key>
+			<string>2017 Formula 1 VTB Russian Grand Prix</string>
+			<key>Race</key>
+			<date>2017-04-30T11:54:33Z</date>
+		</dict>
+		<key>Spain</key>
+		<dict>
+			<key>Promoter Name</key>
+			<string>Formula 1 Gran Premio de España Pirelli 2017</string>
+			<key>Race</key>
+			<date>2017-05-14T11:54:33Z</date>
+		</dict>
+		<key>St. Petersburg</key>
+		<dict>
+			<key>Promoter Name</key>
+			<string>Formula 1 Grand Prix de Monaco 2017</string>
+			<key>Race</key>
+			<date>2017-05-28T11:54:33Z</date>
+		</dict>
+	</dict>
+	<key>indycar</key>
+	<dict>
+		<key>Indianapolis 500</key>
+		<dict>
+			<key>Promoter Name</key>
+			<string>Indianapolis 500</string>
+			<key>Race</key>
+			<date>2017-05-28T11:54:33Z</date>
+		</dict>
+		<key>IndyCar</key>
+		<dict>
+			<key>Promoter Name</key>
+			<string>IndyCar Grand Prix</string>
+			<key>Race</key>
+			<date>2017-05-13T11:54:33Z</date>
+		</dict>
+		<key>Phoenix</key>
+		<dict>
+			<key>Promoter Name</key>
+			<string>Desert Diamond West Valley Phoenix Grand Prix</string>
+			<key>Race</key>
+			<date>2017-04-30T11:54:33Z</date>
+		</dict>
+		<key>Alabama</key>
+		<dict>
+			<key>Promoter Name</key>
+			<string>Honda Indy Grand Prix of Alabama</string>
+			<key>Race</key>
+			<date>2017-04-23T11:54:33Z</date>
+		</dict>
+		<key>Long Beach</key>
+		<dict>
+			<key>Promoter Name</key>
+			<string>Toyota Grand Prix of Long Beach</string>
+			<key>Race</key>
+			<date>2017-04-09T11:54:33Z</date>
+		</dict>
+		<key>St. Petersburg</key>
+		<dict>
+			<key>Promoter Name</key>
+			<string>Firestone Grand Prix of St. Petersburg</string>
+			<key>Race</key>
+			<date>2017-03-12T12:54:33Z</date>
+		</dict>
+	</dict>
+</dict>
+</plist>

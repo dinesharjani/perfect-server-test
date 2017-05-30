@@ -22,7 +22,6 @@ import PerfectHTTP
 import PerfectHTTPServer
 
 enum ServerContentType {
-    static let HTML = "text/html"
     static let JSON = "application/json"
 }
 
@@ -33,16 +32,6 @@ enum PerfectTestServer {
     
     static let ApiVersion = "v1"
     static let CalendarEndpoint = "calendar"
-}
-
-func handler(data: [String:Any]) throws -> RequestHandler {
-	return {
-		request, response in
-		response.status = .ok
-		response.setHeader(.contentType, value: ServerContentType.HTML)
-		response.appendBody(string: "<html><title>Hello, world!</title><body>Hello, world!</body></html>")
-		response.completed()
-	}
 }
 
 func calendarEndpointHandler(data: [String:Any]) throws -> RequestHandler {
@@ -73,11 +62,7 @@ let confData = [
 			"name":PerfectTestServer.Name,
 			"port":PerfectTestServer.PrimaryApiPort,
 			"routes":[
-				["method":"get", "uri":"/", "handler":handler],
-				["method":"get", "uri":"/\(PerfectTestServer.ApiVersion)/\(PerfectTestServer.CalendarEndpoint)", "handler":calendarEndpointHandler],
-				["method":"get", "uri":"/**", "handler":PerfectHTTPServer.HTTPHandler.staticFiles,
-				 "documentRoot":"./webroot",
-				 "allowResponseFilters":true]
+				["method":"get", "uri":"/\(PerfectTestServer.ApiVersion)/\(PerfectTestServer.CalendarEndpoint)", "handler":calendarEndpointHandler]
 			],
 			"filters":[
 				[

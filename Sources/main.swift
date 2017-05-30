@@ -18,6 +18,7 @@
 //
 
 import PerfectLib
+import PerfectXML
 import PerfectHTTP
 import PerfectHTTPServer
 
@@ -50,6 +51,7 @@ func calendarEndpointHandler(data: [String:Any]) throws -> RequestHandler {
         let jsonResponse = ["race1":"Indy 500", "race2":"Monaco GP"]
         do {
             try calendarFile.open(.read, permissions: .readUser)
+            let calendarString = try calendarFile.readString()
             calendarFile.close()
             
             try response.setBody(json: jsonResponse)

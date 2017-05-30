@@ -6,7 +6,9 @@
 FROM perfectlysoft/perfectassistant
 RUN apt-get update && apt-get install -y \
     libssl-dev \
-    uuid-dev
+    uuid-dev \
+    libxml2-dev \
+    pkg-config
 ADD . /PerfectServerTest
 WORKDIR /PerfectServerTest
 RUN swift build

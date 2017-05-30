@@ -35,7 +35,7 @@ enum PerfectTestServer {
 
 enum CalendarEndpoint {
     static let Name = "calendar"
-    static let CalendarFilename = "Calendar.plist"
+    static let CalendarFilename = "Resources/Calendar.plist"
 }
 
 func calendarEndpointHandler(data: [String:Any]) throws -> RequestHandler {
@@ -55,7 +55,7 @@ func calendarEndpointHandler(data: [String:Any]) throws -> RequestHandler {
             try response.setBody(json: jsonResponse)
         } catch {
             response.status = .internalServerError
-            response.appendBody(string: "Error")
+            response.appendBody(string: "Error. Path is \(Dir.workingDir.path)")
         }
         response.completed()
     }

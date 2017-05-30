@@ -1087,7 +1087,7 @@
 		AAD6E9D41EDDCCF500F21494 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = "";
+			dstPath = Resources;
 			dstSubfolderSpec = 7;
 			files = (
 				AAD6E9D51EDDCD0200F21494 /* Calendar.plist in CopyFiles */,

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AAD6E9D51EDDCD0200F21494 /* Calendar.plist in CopyFiles */ = {isa = PBXBuildFile; fileRef = AAD6E9CF1EDD947D00F21494 /* Calendar.plist */; };
 		OBJ_1000 /* dh_lib.c in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_258 /* dh_lib.c */; };
 		OBJ_1001 /* dh_pmeth.c in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_259 /* dh_pmeth.c */; };
 		OBJ_1002 /* dh_prn.c in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_260 /* dh_prn.c */; };
@@ -1081,6 +1082,19 @@
 			remoteInfo = PerfectHTTPServer;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AAD6E9D41EDDCCF500F21494 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				AAD6E9D51EDDCD0200F21494 /* Calendar.plist in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		AAD6E9CF1EDD947D00F21494 /* Calendar.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Calendar.plist; sourceTree = "<group>"; };
@@ -3039,6 +3053,7 @@
 				OBJ_1652 /* Sources */,
 				OBJ_1654 /* Frameworks */,
 				_ScriptPhase_PerfectServerTest /* ShellScript */,
+				AAD6E9D41EDDCCF500F21494 /* CopyFiles */,
 			);
 			buildRules = (
 			);

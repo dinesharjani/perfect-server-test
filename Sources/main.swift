@@ -31,7 +31,11 @@ enum PerfectTestServer {
     static let RedirectApiPort = 8181
     
     static let ApiVersion = "v1"
-    static let CalendarEndpoint = "calendar"
+}
+
+enum CalendarEndpoint {
+    static let Name = "calendar"
+    static let CalendarFilename = "Calendar.plist"
 }
 
 func calendarEndpointHandler(data: [String:Any]) throws -> RequestHandler {
@@ -40,8 +44,14 @@ func calendarEndpointHandler(data: [String:Any]) throws -> RequestHandler {
         
         response.status = .ok
         response.setHeader(.contentType, value: ServerContentType.JSON)
+        
+        let calendarFile = File(CalendarEndpoint.CalendarFilename)
+        
         let jsonResponse = ["race1":"Indy 500", "race2":"Monaco GP"]
         do {
+            try calendarFile.open(.read, permissions: .readUser)
+            calendarFile.close()
+            
             try response.setBody(json: jsonResponse)
         } catch {
             response.status = .internalServerError
@@ -62,7 +72,7 @@ let confData = [
 			"name":PerfectTestServer.Name,
 			"port":PerfectTestServer.PrimaryApiPort,
 			"routes":[
-				["method":"get", "uri":"/\(PerfectTestServer.ApiVersion)/\(PerfectTestServer.CalendarEndpoint)", "handler":calendarEndpointHandler]
+				["method":"get", "uri":"/\(PerfectTestServer.ApiVersion)/\(CalendarEndpoint.Name)", "handler":calendarEndpointHandler]
 			],
 			"filters":[
 				[

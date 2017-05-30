@@ -21,22 +21,45 @@ import PerfectLib
 import PerfectHTTP
 import PerfectHTTPServer
 
-struct PerfectTestServer {
+enum ServerContentType {
+    static let HTML = "text/html"
+    static let JSON = "application/json"
+}
+
+enum PerfectTestServer {
     static let Name = "localhost"
     static let PrimaryApiPort = 8080
     static let RedirectApiPort = 8181
+    
+    static let ApiVersion = "v1"
+    static let CalendarEndpoint = "calendar"
 }
 
-// An example request handler.
-// This 'handler' function can be referenced directly in the configuration below.
 func handler(data: [String:Any]) throws -> RequestHandler {
 	return {
 		request, response in
 		response.status = .ok
-		response.setHeader(.contentType, value: "text/html")
+		response.setHeader(.contentType, value: ServerContentType.HTML)
 		response.appendBody(string: "<html><title>Hello, world!</title><body>Hello, world!</body></html>")
 		response.completed()
 	}
+}
+
+func calendarEndpointHandler(data: [String:Any]) throws -> RequestHandler {
+    return {
+        request, response in
+        
+        response.status = .ok
+        response.setHeader(.contentType, value: ServerContentType.JSON)
+        let jsonResponse = ["race1":"Indy 500", "race2":"Monaco GP"]
+        do {
+            try response.setBody(json: jsonResponse)
+        } catch {
+            response.status = .internalServerError
+            response.appendBody(string: "Error")
+        }
+        response.completed()
+    }
 }
 
 let confData = [
@@ -51,6 +74,7 @@ let confData = [
 			"port":PerfectTestServer.PrimaryApiPort,
 			"routes":[
 				["method":"get", "uri":"/", "handler":handler],
+				["method":"get", "uri":"/\(PerfectTestServer.ApiVersion)/\(PerfectTestServer.CalendarEndpoint)", "handler":calendarEndpointHandler],
 				["method":"get", "uri":"/**", "handler":PerfectHTTPServer.HTTPHandler.staticFiles,
 				 "documentRoot":"./webroot",
 				 "allowResponseFilters":true]
@@ -77,9 +101,8 @@ let confData = [
 ]
 
 do {
-	// Launch the servers based on the configuration data.
 	try HTTPServer.launch(configurationData: confData)
 } catch {
-	fatalError("\(error)") // fatal error launching one of the servers
+	fatalError("\(error)")
 }
 

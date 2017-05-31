@@ -34,51 +34,8 @@ enum PerfectTestServer {
     static let ApiVersion = "v1"
 }
 
-enum CalendarEndpoint {
-    static let Name = "calendar"
-    static let CalendarFilename = "Resources/Calendar.plist"
-}
 
-func calendarEndpointHandler(data: [String:Any]) throws -> RequestHandler {
-    return {
-        request, response in
-        
-        response.status = .ok
-        response.setHeader(.contentType, value: ServerContentType.JSON)
-        
-        var jsonResponse: [String:Any] = [:]
-        do {
-            let calendarFile = File(CalendarEndpoint.CalendarFilename)
-            let data = try Data(contentsOf:URL(fileURLWithPath:calendarFile.realPath))
-            let calendarDictionary = try PropertyListSerialization.propertyList(from: data, options: [], format: nil) as! [String:Any]
-            for category in calendarDictionary {
-                var jsonEvents: [String:[String:Any]] = [:]
-                
-                let events = category.value as! [String:[String:Any]]
-                for event in events {
-                    var jsonEvent: [String:String] = [:]
-                    
-                    jsonEvent["promoter"] = event.value["Promoter Name"] as! String
-                    let raceDate = event.value["Race"] as! Date
-                    let formatter = DateFormatter()
-                    formatter.dateStyle = .short
-                    formatter.timeStyle = .medium
-                    jsonEvent["race"] = formatter.string(from: raceDate)
-                    
-                    jsonEvents[event.key] = jsonEvent
-                }
-                
-                jsonResponse[category.key] = jsonEvents
-            }
-            
-            try response.setBody(json: jsonResponse)
-        } catch {
-            response.status = .internalServerError
-            response.appendBody(string: "Error. Path is \(Dir.workingDir.path)")
-        }
-        response.completed()
-    }
-}
+let calendarEndpoint = CalendarEndpoint()
 
 let confData = [
 	"servers": [
@@ -91,7 +48,7 @@ let confData = [
 			"name":PerfectTestServer.Name,
 			"port":PerfectTestServer.PrimaryApiPort,
 			"routes":[
-				["method":"get", "uri":"/\(PerfectTestServer.ApiVersion)/\(CalendarEndpoint.Name)", "handler":calendarEndpointHandler]
+				["method":"get", "uri":"/\(PerfectTestServer.ApiVersion)/\(CalendarEndpoint.Name)", "handler":calendarEndpoint.calendarEndpointHandler]
 			],
 			"filters":[
 				[

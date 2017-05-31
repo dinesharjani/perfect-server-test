@@ -48,6 +48,7 @@ let confData = [
 			"name":PerfectTestServer.Name,
 			"port":PerfectTestServer.PrimaryApiPort,
 			"routes":[
+                ["method":"get", "uri":"/\(PerfectTestServer.ApiVersion)/\(CalendarEndpoint.Name)/\(CalendarEndpoint.StatusName)", "handler":calendarEndpoint.calendarStatusEndpointHandler],
 				["method":"get", "uri":"/\(PerfectTestServer.ApiVersion)/\(CalendarEndpoint.Name)", "handler":calendarEndpoint.calendarEndpointHandler]
 			],
 			"filters":[

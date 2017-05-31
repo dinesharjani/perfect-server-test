@@ -12,6 +12,7 @@ import PerfectLib
 
 public class CalendarEndpoint : NSObject {
     static let Name = "calendar"
+    static let StatusName = "status"
     static let CalendarFilename = "Resources/Calendar.plist"
     
     private static let RaceFullNameXMLKey = "Promoter Name"
@@ -19,6 +20,7 @@ public class CalendarEndpoint : NSObject {
     
     private static let FullNameKey = "full_name"
     private static let DateKey = "date"
+    private static let LastModifiedKey = "last_modified"
     
     let formatter = DateFormatter()
     
@@ -27,6 +29,27 @@ public class CalendarEndpoint : NSObject {
         
         self.formatter.dateStyle = .short
         self.formatter.timeStyle = .medium
+    }
+    
+    public func calendarStatusEndpointHandler(data: [String:Any]) throws -> RequestHandler {
+        return {
+            request, response in
+            
+            response.status = .ok
+            response.setHeader(.contentType, value: ServerContentType.JSON)
+            var jsonResponse: [String:String] = [:]
+            
+            do {
+                let calendarFile = File(CalendarEndpoint.CalendarFilename)
+                jsonResponse[CalendarEndpoint.LastModifiedKey] = String(calendarFile.modificationTime)
+                try response.setBody(json: jsonResponse)
+            } catch {
+                response.status = .internalServerError
+                response.appendBody(string: "Error.")
+            }
+            
+            response.completed()
+        }
     }
     
     public func calendarEndpointHandler(data: [String:Any]) throws -> RequestHandler {
@@ -61,7 +84,7 @@ public class CalendarEndpoint : NSObject {
                 try response.setBody(json: jsonResponse)
             } catch {
                 response.status = .internalServerError
-                response.appendBody(string: "Error. Path is \(Dir.workingDir.path)")
+                response.appendBody(string: "Error.")
             }
             response.completed()
         }

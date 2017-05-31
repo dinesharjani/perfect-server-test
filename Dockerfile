@@ -14,9 +14,3 @@ ENTRYPOINT [".build/debug/PerfectServerTest"]
 
 # Build release version
 #RUN swift build --configuration release
-
-# If you wanted to base this off the official Swift docker
-#FROM swiftdocker/swift
-
-# Not necessary when using pperfectlysoft/perfectassistant
-#RUN /usr/src/Perfect-Ubuntu/install_swift.sh --sure

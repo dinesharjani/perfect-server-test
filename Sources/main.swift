@@ -59,7 +59,7 @@ let confData = [
 				[
                 "type":"request",
                 "priority":"low",
-                "name":EndpointLogger.swiftyBeaverLoggingFilter,
+                "name":EndpointLogger.nginxLoggingFilter,
                 ]
 			]
 		],

@@ -15,9 +15,13 @@ The master branch of this project currently compiles with **Xcode 8.2** or the *
 
 ## Building & Running
 
-You can build and run this project on MacOS or as a Docker container. For the first, just open the `.xcodeproj` file and perform a `Build and Run`.
+You can build and run this project on MacOS or as a Docker container. For the first, just open the `.xcodeproj` file and perform a `Build and Run`. If you need to or want to generate a fresh `Xcode` project file, just type from the root project's folder:
 
-For the second, please follow these steps from the root project's folder:
+```
+swift package generate-xcodeproj
+```
+
+For the second, follow these steps:
 
 ```
 docker build -t perfect-server-test .

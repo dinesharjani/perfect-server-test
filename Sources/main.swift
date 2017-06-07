@@ -34,7 +34,6 @@ enum PerfectTestServer {
     static let ApiVersion = "v1"
 }
 
-
 let calendarEndpoint = CalendarEndpoint()
 
 let confData = [
@@ -56,7 +55,12 @@ let confData = [
 				"type":"response",
 				"priority":"high",
 				"name":PerfectHTTPServer.HTTPFilter.contentCompression,
-				]
+				],
+				[
+                "type":"request",
+                "priority":"low",
+                "name":EndpointLogger.swiftyBeaverLoggingFilter,
+                ]
 			]
 		],
 		// Configuration data for another server which:

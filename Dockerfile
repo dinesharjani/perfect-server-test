@@ -9,11 +9,13 @@ RUN apt-get update && apt-get install -y \
     libssl-dev \
     uuid-dev \
     goaccess
-    
+
 ADD . /PerfectServerTest
 WORKDIR /PerfectServerTest
 RUN swift build
-ENTRYPOINT [".build/debug/PerfectServerTest"]
+RUN cp goaccess.conf /etc/
+#Doesn't work :(
+#ENTRYPOINT ["/bin/sh /PerfectServerTest/entrypoint.sh"]
 
 # Build release version
 #RUN swift build --configuration release

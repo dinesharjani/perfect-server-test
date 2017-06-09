@@ -19,7 +19,7 @@ public class EndpointLogger : NSObject {
         
         func filter(request: HTTPRequest, response: HTTPResponse, callback: (HTTPRequestFilterResult) -> ()) {
             let logger = NginxLogger(NginxLoggerFilter.LogFilename)
-            logger.log(request)
+            logger.log(request, response: response)
             
             callback(.continue(request, response))
         }

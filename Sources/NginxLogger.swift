@@ -36,7 +36,7 @@ public class NginxLogger : NSObject {
     
     // Logs in CLF (Common Log Format)
     // 127.0.0.1 - frank [10/Oct/2000:13:55:36 -0700] "GET /apache_pb.gif HTTP/1.0" 200 2326
-    public func log(_ request: HTTPRequest) {
+    public func log(_ request: HTTPRequest, response: HTTPResponse) {
         let ipAddress = request.connection.remoteAddress != nil ? request.connection.remoteAddress!.host : Constants.UnknownIPAddress
         let user = Constants.UnknownUser
         
@@ -45,8 +45,13 @@ public class NginxLogger : NSObject {
         let time = timeFormatter.string(from: requestDateAndTime)
         
         let requestType = request.method.description
+        let requestEndpoint = request.uri
+        let requestProtocol = "HTTP/\(request.protocolVersion.0).\(request.protocolVersion.1)"
         
-        let loggedRequest = "\(ipAddress) - \(user) [\(date):\(time)] \"\(requestType) /apache_pb.gif HTTP/1.0\" 200 2326"
+        let responseStatus = response.status.code
+        let responseSize = response.header(.contentLength) != nil ? response.header(.contentLength)! : "0"
+        
+        let loggedRequest = "\(ipAddress) - \(user) [\(date):\(time)] \"\(requestType) \(requestEndpoint) \(requestProtocol)\" \(responseStatus) \(responseSize)"
         append(loggedRequest)
         print(loggedRequest)
     }

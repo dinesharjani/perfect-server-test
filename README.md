@@ -25,7 +25,7 @@ For the second, follow these steps:
 
 ```
 docker build -t perfect-server-test .
-docker run --dns=8.8.8.8 -p 8080:8080 -p 8181:8181 -d perfect-server-test
+docker run —dns=8.8.8.8 -p 7890:7890 -p 8080:8080 -p 8181:8181 -it perfect-server-test sh entrypoint.sh
 ```
 
 You will now be able to hit both endpoints at `localhost:8080/v1/calendar` and `localhost:8080/v1/calendar/status`. You can test this with your Browser, with a utility such as [Postman](https://www.getpostman.com/), or even from a mobile device connected to the same network:

@@ -112,11 +112,23 @@
 		</array>
 	</dict>
 	<key>indycar</key>
-	<dict/>
+	<dict>
+		<key>paddock</key>
+		<array/>
+		<key>press</key>
+		<array/>
+	</dict>
 	<key>wrc</key>
-	<dict/>
+	<dict>
+		<key>paddock</key>
+		<array/>
+		<key>press</key>
+		<array/>
+	</dict>
 	<key>wec</key>
 	<dict>
+		<key>press</key>
+		<array/>
 		<key>paddock</key>
 		<array>
 			<dict>

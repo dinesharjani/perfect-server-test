@@ -50,7 +50,8 @@ let confData = [
 			"routes":[
                 ["method":"get", "uri":"/\(PerfectTestServer.ApiVersion)/\(CalendarEndpoint.Name)/\(CalendarEndpoint.StatusName)", "handler":calendarEndpoint.calendarStatusEndpointHandler],
                 ["method":"get", "uri":"/\(PerfectTestServer.ApiVersion)/\(UsersEndpoint.Name)/\(UsersEndpoint.StatusName)", "handler":usersEndpoint.userStatusEndpointHandler],
-				["method":"get", "uri":"/\(PerfectTestServer.ApiVersion)/\(CalendarEndpoint.Name)", "handler":calendarEndpoint.calendarEndpointHandler]
+				["method":"get", "uri":"/\(PerfectTestServer.ApiVersion)/\(CalendarEndpoint.Name)", "handler":calendarEndpoint.calendarEndpointHandler],
+				["method":"get", "uri":"/\(PerfectTestServer.ApiVersion)/\(UsersEndpoint.Name)", "handler":usersEndpoint.usersEndpointHandler]
 			],
 			"filters":[
 				[

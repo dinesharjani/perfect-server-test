@@ -59,7 +59,7 @@ let confData = [
 				[
                 "type":"request",
                 "priority":"low",
-                "name":EndpointLogger.nginxLoggingFilter,
+                "name":EndpointLogger.clfResponseLoggingFilter,
                 ]
 			]
 		],

@@ -1,5 +1,5 @@
 //
-//  NginxLogger.swift
+//  CLFResponseLogger.swift
 //  PerfectServerTest
 //
 //  Created by Dinesh Harjani on 07/06/2017.
@@ -10,7 +10,7 @@ import Foundation
 import PerfectLib
 import PerfectHTTP
 
-public class NginxLogger : NSObject {
+public class CLFResponseLogger : NSObject {
     
     private enum Constants {
         static let UnknownIPAddress = "X.X.X.X"

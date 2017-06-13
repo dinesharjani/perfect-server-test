@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>formula-one</key>
+	<dict>
+		<key>paddock</key>
+		<array>
+			<dict>
+				<key>id</key>
+				<string>167321831</string>
+				<key>en</key>
+				<string>Tyre Manufacturer</string>
+				<key>es</key>
+				<string>Fabricante de Neumáticos</string>
+				<key>es-MX</key>
+				<string>Fabricante de Gomas</string>
+			</dict>
+			<dict>
+				<key>id</key>
+				<string>1143472657</string>
+				<key>en</key>
+				<string>Mercedes&apos; Flying Finn</string>
+				<key>es</key>
+				<string>Finlandés Volador de Mercedes</string>
+				<key>es-MX</key>
+				<string>Finlandés Volador de Mercedes</string>
+			</dict>
+			<dict>
+				<key>id</key>
+				<string>226087776</string>
+				<key>en</key>
+				<string>House of Dr. Marko</string>
+				<key>es</key>
+				<string>Casa del Dr. Helmut Marko</string>
+				<key>es-MX</key>
+				<string>Casa del Dr. Helmut Marko</string>
+			</dict>
+			<dict>
+				<key>id</key>
+				<string>121034444</string>
+				<key>en</key>
+				<string>Mercedes AMG Fuel &amp; Oil Supplier</string>
+				<key>es</key>
+				<string>Suministrador de Aceite y Combustible de Mercedes AMG</string>
+				<key>es-MX</key>
+				<string>Suministrador de Aceite y Combustible de Mercedes AMG</string>
+			</dict>
+		</array>
+		<key>press</key>
+		<array>
+			<dict>
+				<key>id</key>
+				<string>44571497</string>
+				<key>en</key>
+				<string>Renowned Magazine</string>
+				<key>es</key>
+				<string>Revista de Renombre</string>
+				<key>es-MX</key>
+				<string>Revista de Renombre</string>
+			</dict>
+			<dict>
+				<key>id</key>
+				<string>71370894</string>
+				<key>en</key>
+				<string>Independent Journalist</string>
+				<key>es</key>
+				<string>Periodista Independiente</string>
+				<key>es-MX</key>
+				<string>Periodista Independiente</string>
+			</dict>
+			<dict>
+				<key>id</key>
+				<string>505763330</string>
+				<key>en</key>
+				<string>TV Outlet</string>
+				<key>es</key>
+				<string>Cadena de TV</string>
+				<key>es-MX</key>
+				<string>Cadena de TV</string>
+			</dict>
+			<dict>
+				<key>id</key>
+				<string>20517081</string>
+				<key>en</key>
+				<string>&quot;The&quot; Motorsport Authority</string>
+				<key>es</key>
+				<string>&quot;La&quot; Autoridad en Motorsport</string>
+				<key>es-MX</key>
+				<string>&quot;La&quot; Autoridad en Motorsport</string>
+			</dict>
+			<dict>
+				<key>id</key>
+				<string>36339032</string>
+				<key>en</key>
+				<string>Junior Motorsport Authority</string>
+				<key>es</key>
+				<string>&quot;La&quot; Autoridad Jr. en Motorsport</string>
+				<key>es-MX</key>
+				<string>&quot;La&quot; Autoridad Jr. en Motorsport</string>
+			</dict>
+			<dict>
+				<key>id</key>
+				<string>368276033</string>
+				<key>en</key>
+				<string>Premier English F1 Channel</string>
+				<key>es</key>
+				<string>Canal de F-1 Inglés por Antonomasia</string>
+				<key>es-MX</key>
+				<string>Canal de F-1 Inglés por Antonomasia</string>
+			</dict>
+		</array>
+	</dict>
+	<key>indycar</key>
+	<dict/>
+	<key>wrc</key>
+	<dict/>
+	<key>wec</key>
+	<dict>
+		<key>paddock</key>
+		<array>
+			<dict>
+				<key>id</key>
+				<string>426488154</string>
+				<key>en</key>
+				<string>Official Account</string>
+				<key>es</key>
+				<string>Cuenta Oficial</string>
+				<key>es-MX</key>
+				<string>Cuenta Oficial</string>
+			</dict>
+		</array>
+	</dict>
+</dict>
+</plist>

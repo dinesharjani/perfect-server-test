@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AA56CFFA1EE87168005583EF /* Calendar.plist in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA56CFF91EE87168005583EF /* Calendar.plist */; };
+		AA7465CD1EEFFACF005300A6 /* Calendar.plist in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA7465CC1EEFFABE005300A6 /* Calendar.plist */; };
 		OBJ_1000 /* dh_err.c in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_258 /* dh_err.c */; };
 		OBJ_1001 /* dh_gen.c in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_259 /* dh_gen.c */; };
 		OBJ_1002 /* dh_kdf.c in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_260 /* dh_kdf.c */; };
@@ -1093,14 +1093,14 @@
 			dstPath = Resources;
 			dstSubfolderSpec = 7;
 			files = (
-				AA56CFFA1EE87168005583EF /* Calendar.plist in CopyFiles */,
+				AA7465CD1EEFFACF005300A6 /* Calendar.plist in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		AA56CFF91EE87168005583EF /* Calendar.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Calendar.plist; path = Resources/Calendar.plist; sourceTree = "<group>"; };
+		AA7465CC1EEFFABE005300A6 /* Calendar.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Calendar.plist; path = Resources/Calendar.plist; sourceTree = "<group>"; };
 		OBJ_10 /* CLFResponseLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLFResponseLogger.swift; sourceTree = "<group>"; };
 		OBJ_100 /* a_utf8.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = a_utf8.c; sourceTree = "<group>"; };
 		OBJ_101 /* a_verify.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = a_verify.c; sourceTree = "<group>"; };
@@ -1133,7 +1133,6 @@
 		OBJ_127 /* bf_nbio.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bf_nbio.c; sourceTree = "<group>"; };
 		OBJ_128 /* bf_null.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bf_null.c; sourceTree = "<group>"; };
 		OBJ_129 /* bf_ofb64.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bf_ofb64.c; sourceTree = "<group>"; };
-		OBJ_13 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resources; sourceTree = SOURCE_ROOT; };
 		OBJ_130 /* bf_skey.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bf_skey.c; sourceTree = "<group>"; };
 		OBJ_131 /* bio_asn1.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bio_asn1.c; sourceTree = "<group>"; };
 		OBJ_132 /* bio_b64.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bio_b64.c; sourceTree = "<group>"; };
@@ -1983,6 +1982,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA7465CB1EEFFAB6005300A6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AA7465CC1EEFFABE005300A6 /* Calendar.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		OBJ_12 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -2087,11 +2094,10 @@
 		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
-				AA56CFF91EE87168005583EF /* Calendar.plist */,
 				OBJ_6 /* Package.swift */,
 				OBJ_7 /* Sources */,
 				OBJ_12 /* Tests */,
-				OBJ_13 /* Resources */,
+				AA7465CB1EEFFAB6005300A6 /* Resources */,
 				OBJ_14 /* Dependencies */,
 				OBJ_779 /* Products */,
 			);

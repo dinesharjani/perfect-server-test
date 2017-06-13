@@ -46,6 +46,26 @@
 				<key>es-MX</key>
 				<string>Suministrador de Aceite y Combustible de Mercedes AMG</string>
 			</dict>
+			<dict>
+				<key>id</key>
+				<string>156635674</string>
+				<key>en</key>
+				<string>Nando&apos;s Teammate</string>
+				<key>es</key>
+				<string>2ºdo piloto de McLaren</string>
+				<key>es-MX</key>
+				<string>2ºdo piloto de McLaren</string>
+			</dict>
+			<dict>
+				<key>id</key>
+				<string>69008563</string>
+				<key>en</key>
+				<string>Official Sport Account</string>
+				<key>es</key>
+				<string>Cuenta Oficial del Deporte</string>
+				<key>es-MX</key>
+				<string>Cuenta Oficial del Deporte</string>
+			</dict>
 		</array>
 		<key>press</key>
 		<array>
@@ -114,7 +134,28 @@
 	<key>indycar</key>
 	<dict>
 		<key>paddock</key>
-		<array/>
+		<array>
+			<dict>
+				<key>id</key>
+				<string>125832497</string>
+				<key>en</key>
+				<string>2016 IndyCar Winner</string>
+				<key>es</key>
+				<string>Ganador 500 Millas de Indianápolis en 2016</string>
+				<key>es-MX</key>
+				<string>Ganador 500 Millas de Indianápolis en 2016</string>
+			</dict>
+			<dict>
+				<key>id</key>
+				<string>21302878</string>
+				<key>en</key>
+				<string>Official IndyCar Account</string>
+				<key>es</key>
+				<string>Cuenta Oficial del Mundial IndyCar</string>
+				<key>es-MX</key>
+				<string>Cuenta Oficial del Mundial IndyCar</string>
+			</dict>
+		</array>
 		<key>press</key>
 		<array/>
 	</dict>

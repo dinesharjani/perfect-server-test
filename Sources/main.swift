@@ -35,6 +35,7 @@ enum PerfectTestServer {
 }
 
 let calendarEndpoint = CalendarEndpoint()
+let usersEndpoint = UsersEndpoint()
 
 let confData = [
 	"servers": [
@@ -48,6 +49,7 @@ let confData = [
 			"port":PerfectTestServer.PrimaryApiPort,
 			"routes":[
                 ["method":"get", "uri":"/\(PerfectTestServer.ApiVersion)/\(CalendarEndpoint.Name)/\(CalendarEndpoint.StatusName)", "handler":calendarEndpoint.calendarStatusEndpointHandler],
+                ["method":"get", "uri":"/\(PerfectTestServer.ApiVersion)/\(UsersEndpoint.Name)/\(UsersEndpoint.StatusName)", "handler":usersEndpoint.userStatusEndpointHandler],
 				["method":"get", "uri":"/\(PerfectTestServer.ApiVersion)/\(CalendarEndpoint.Name)", "handler":calendarEndpoint.calendarEndpointHandler]
 			],
 			"filters":[

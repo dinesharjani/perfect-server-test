@@ -15,6 +15,8 @@ public class CLFResponseLogger : NSObject {
     private enum Constants {
         static let UnknownIPAddress = "X.X.X.X"
         static let UnknownUser = "Ghost"
+        static let UnkownBandwidth = "0"
+        static let UnknownUserAgent = "Unknown"
     }
     
     private let file: File
@@ -49,9 +51,12 @@ public class CLFResponseLogger : NSObject {
         let requestProtocol = "HTTP/\(request.protocolVersion.0).\(request.protocolVersion.1)"
         
         let responseStatus = response.status.code
-        let responseSize = response.header(.contentLength) != nil ? response.header(.contentLength)! : "0"
+        let responseSize = response.header(.contentLength) != nil ? response.header(.contentLength)! : Constants.UnkownBandwidth
+
+        let requestReferer = request.header(.referer) != nil ? String(describing: request.header(.referer)!) : Constants.UnknownUserAgent
+        let requestUserAgent = String(describing: request.header(.userAgent)!)
         
-        let loggedRequest = "\(ipAddress) - \(user) [\(date):\(time)] \"\(requestType) \(requestEndpoint) \(requestProtocol)\" \(responseStatus) \(responseSize)"
+        let loggedRequest = "\(ipAddress) - \(user) [\(date):\(time)] \"\(requestType) \(requestEndpoint) \(requestProtocol)\" \(responseStatus) \(responseSize) \"\(requestReferer)\" \"\(requestUserAgent)\""
         append(loggedRequest)
         print(loggedRequest)
     }

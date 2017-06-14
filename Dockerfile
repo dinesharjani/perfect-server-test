@@ -8,14 +8,25 @@ FROM perfectlysoft/perfectassistant
 RUN apt-get update && apt-get install -y \
     libssl-dev \
     uuid-dev \
-    goaccess
+    libgeoip-dev \
+    dh-autoreconf \
+    libncursesw5-dev
 
+# Install GoAcess
+RUN git clone https://github.com/allinurl/goaccess.git
+WORKDIR /goaccess
+RUN autoreconf -fiv
+RUN ./configure --enable-geoip --enable-utf8
+RUN make
+RUN make install
+
+# Install our Swift Server
 ADD . /PerfectServerTest
 WORKDIR /PerfectServerTest
+RUN cp goaccess.conf /usr/local/etc/
 RUN swift build
-RUN cp goaccess.conf /etc/
-#Doesn't work :(
-#ENTRYPOINT ["/bin/sh /PerfectServerTest/entrypoint.sh"]
+RUN chmod +x entrypoint.sh
+ENTRYPOINT [ "/PerfectServerTest/entrypoint.sh" ]
 
 # Build release version
 #RUN swift build --configuration release

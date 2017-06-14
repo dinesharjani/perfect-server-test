@@ -15,7 +15,7 @@ public class CLFResponseLogger : NSObject {
     private enum Constants {
         static let UnknownIPAddress = "X.X.X.X"
         static let UnknownUser = "Ghost"
-        static let UnkownBandwidth = "0"
+        static let UnkownBandwidthUsed = "0"
         static let UnknownUserAgent = "Unknown"
     }
     
@@ -36,9 +36,9 @@ public class CLFResponseLogger : NSObject {
         super.init()
     }
     
-    // Logs in CLF (Common Log Format)
-    // 127.0.0.1 - frank [10/Oct/2000:13:55:36 -0700] "GET /apache_pb.gif HTTP/1.0" 200 2326
-    public func log(_ request: HTTPRequest, response: HTTPResponse) {
+    public func log(response: HTTPResponse) {
+        let request = response.request
+        
         let ipAddress = request.connection.remoteAddress != nil ? request.connection.remoteAddress!.host : Constants.UnknownIPAddress
         let user = Constants.UnknownUser
         
@@ -51,7 +51,7 @@ public class CLFResponseLogger : NSObject {
         let requestProtocol = "HTTP/\(request.protocolVersion.0).\(request.protocolVersion.1)"
         
         let responseStatus = response.status.code
-        let responseSize = response.header(.contentLength) != nil ? response.header(.contentLength)! : Constants.UnkownBandwidth
+        let responseSize = response.header(.contentLength) != nil ? response.header(.contentLength)! : Constants.UnknownUserAgent
 
         let requestReferer = request.header(.referer) != nil ? String(describing: request.header(.referer)!) : Constants.UnknownUserAgent
         let requestUserAgent = String(describing: request.header(.userAgent)!)

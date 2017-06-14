@@ -60,7 +60,7 @@ let confData = [
 				"name":PerfectHTTPServer.HTTPFilter.contentCompression,
 				],
 				[
-                "type":"request",
+                "type":"response",
                 "priority":"low",
                 "name":EndpointLogger.clfResponseLoggingFilter,
                 ]

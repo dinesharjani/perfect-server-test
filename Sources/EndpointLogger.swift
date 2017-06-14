@@ -11,21 +11,27 @@ import PerfectHTTP
 
 public class EndpointLogger : NSObject {
     
-    private struct CLFResponseLoggerFilter: HTTPRequestFilter {
+    private struct CLFResponseLoggerFilter: HTTPResponseFilter {
         
         static let LogFilename = "beaver.log"
         
         let logFileURL = URL(fileURLWithPath: LogFilename)
         
-        func filter(request: HTTPRequest, response: HTTPResponse, callback: (HTTPRequestFilterResult) -> ()) {
+        func filterHeaders(response: HTTPResponse, callback: (HTTPResponseFilterResult) -> ()) {
             let logger = CLFResponseLogger(CLFResponseLoggerFilter.LogFilename)
-            logger.log(request, response: response)
+            logger.log(response: response)
             
-            callback(.continue(request, response))
+            callback(.continue)
+        }
+        
+        // Implement HTTPResponseFilter
+        public func filterBody(response: HTTPResponse, callback: (HTTPResponseFilterResult) -> ()) {
+            // No-op.
+            callback(.continue)
         }
     }
     
-    public static func clfResponseLoggingFilter(data: [String:Any]) throws -> HTTPRequestFilter {
+    public static func clfResponseLoggingFilter(data: [String:Any]) throws -> HTTPResponseFilter {
         return CLFResponseLoggerFilter()
     }
 }

@@ -5,7 +5,7 @@
 
 This repository holds a test Swift server using the Perfect framework - you're free to clone or fork this project as long as Perfect License from which this project is derived are met.
 
-The premise of this project is to prove that a Swift-based backend server is viable, using Docker as a container to allow deployment on any kind of system. This sample server has four endpoints on ports `8080` and `8081`: `/v1/calendar`, `/v1/calendar/status`, `/v1/users` and `/v1/users/status`. The first "non-status" endpoints read a Property List file, parse it and returns it as a JSON - the "status" endpoints return the last modified date of the aforementioned Property List files.
+The premise of this project is to prove that a Swift-based backend server is viable, using `Docker` as a container to allow deployment on any kind of system. This sample server has four endpoints on ports `8080` and `8081`: `/v1/calendar`, `/v1/calendar/status`, `/v1/users` and `/v1/users/status`. The first "non-status" endpoints read a Property List file, parse it and returns it as a JSON - the "status" endpoints return the last modified date of the aforementioned Property List files.
 
 ![Cover image.](https://github.com/the7thgoldrunner/perfect-server-test/blob/master/Postman.png)
 
@@ -15,13 +15,17 @@ The master branch of this project currently compiles with **Xcode 8.2** or the *
 
 ## Building & Running
 
-You can build and run this project on MacOS or as a Docker container. For the first, just open the `.xcodeproj` file and perform a `Build and Run`. If you need to or want to generate a fresh `Xcode` project file, just type from the root project's folder:
+You can build and run this project on MacOS or as a `Docker` container. For the first, just open the `.xcodeproj` file and perform a `Build and Run`. If you need to or want to generate a fresh `Xcode` project file, just type from the root project's folder:
 
 ```
 swift package generate-xcodeproj
 ```
 
-For the second, follow these steps:
+To run the project from `Xcode`, please make sure there's a `Copy Files Phase` at the end of the project's `Build Settings` tab, like so:
+
+![Xcode Build Settings tab.](https://github.com/the7thgoldrunner/perfect-server-test/blob/master/copy-files-phase.png)
+
+To build and run using `Docker`, follow these steps:
 
 ```
 docker build -t perfect-server-test .
@@ -34,7 +38,7 @@ You will now be able to hit both endpoints at `localhost:8080/v1/calendar` and `
 
 ## Real-Time Statistics
 
-Not happy with what we've achieved so far, we wanted to add a way to visualize what was going on behind the covers. Now, I know the "right way" of doing multiple services in Docker is through multiple containers - that said, since this is just an example, I thought I'd break the rules. The consequences are, of course, a 14-layer Dockerfile, but since you're not going to go through the pain of having to develop this, it'll all be straightforward to you.
+Not happy with what we've achieved so far, we wanted to add a way to visualize what was going on behind the covers. Now, I know the "right way" of doing multiple services in `Docker` is through multiple containers - that said, since this is just an example, I thought I'd break the rules. The consequences are, of course, a 14-layer Dockerfile, but since you're not going to go through the pain of having to develop this, it'll all be straightforward to you.
 
 For the real-time analytics we chose [GoAccess](http://goaccess.io/), which is free, and of course looks absolutely badass. There is, of course, a console view of all the data, but we thought the web solution lent itself better to our project.
 

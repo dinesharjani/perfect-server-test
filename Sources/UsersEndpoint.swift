@@ -16,6 +16,24 @@ public class UsersEndpoint : NSObject {
     static let StatusName = "status"
     static let UsersFilename = "Resources/Users.plist"
     
+    private enum Language : String {
+        case English = "en"
+        case Spanish = "es"
+        case Mexican = "es-MX"
+        
+        static func isValidLanguage(_ language: String) -> Bool {
+            if language == Language.English.rawValue {
+                return true
+            } else if language == Language.Spanish.rawValue {
+                return true
+            } else if language == Language.Mexican.rawValue {
+                return true
+            }
+            
+            return false
+        }
+    }
+    
     private enum UserKeys {
         static let PaddockKey = "paddock"
         static let PressKey = "press"
@@ -57,13 +75,14 @@ public class UsersEndpoint : NSObject {
                 let data = try Data(contentsOf:URL(fileURLWithPath:usersFile.realPath))
                 let usersDictionary = try PropertyListSerialization.propertyList(from: data, options: [], format: nil) as! [String:[String:Any]]
                 
+                let language = self.requestParameterLanguage(request)
                 for category in usersDictionary {
                     var jsonCategory: [String:[[String:String]]] = [:]
                     
-                    let paddockMembers = category.value[UserKeys.PaddockKey] as! [[String:String]]
+                    let paddockMembers = self.filter(users: category.value[UserKeys.PaddockKey] as! [[String:String]], language: language)
                     jsonCategory[UserKeys.PaddockKey] = paddockMembers
                     
-                    let pressMembers = category.value[UserKeys.PressKey] as! [[String:String]]
+                    let pressMembers = self.filter(users: category.value[UserKeys.PressKey] as! [[String:String]], language: language)
                     jsonCategory[UserKeys.PressKey] = pressMembers
                     
                     jsonResponse[category.key] = jsonCategory
@@ -76,5 +95,30 @@ public class UsersEndpoint : NSObject {
             }
             response.completed()
         }
+    }
+    
+    public func filter(users: [[String : String]], language : String) -> [[String : String]] {
+        var filteredUsers = [[String : String]]()
+        for user in users {
+            var filteredUser = user
+            for (userKey, _) in filteredUser {
+                if Language.isValidLanguage(userKey) && language != userKey {
+                    filteredUser.removeValue(forKey: userKey)
+                }
+            }
+            filteredUsers.append(filteredUser)
+        }
+        
+        return filteredUsers
+    }
+    
+    public func requestParameterLanguage(_ request: HTTPRequest) -> String {
+        for (parameter, value) in request.queryParams {
+            if parameter == "language" && Language.isValidLanguage(value) {
+                return value
+            }
+        }
+        
+        return "en"
     }
 }

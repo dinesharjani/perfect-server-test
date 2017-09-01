@@ -37,6 +37,7 @@ public class UsersEndpoint : NSObject {
     private enum UserKeys {
         static let PaddockKey = "paddock"
         static let PressKey = "press"
+        static let OtherKey = "other"
         
         static let LastModifiedKey = "last_modified"
     }
@@ -84,6 +85,9 @@ public class UsersEndpoint : NSObject {
                     
                     let pressMembers = self.filter(users: category.value[UserKeys.PressKey] as! [[String:String]], language: language)
                     jsonCategory[UserKeys.PressKey] = pressMembers
+                    
+                    let otherMembers = self.filter(users: category.value[UserKeys.OtherKey] as! [[String:String]], language: language)
+                    jsonCategory[UserKeys.OtherKey] = otherMembers
                     
                     jsonResponse[category.key] = jsonCategory
                 }

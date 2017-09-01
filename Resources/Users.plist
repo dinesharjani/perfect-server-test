@@ -8,6 +8,36 @@
 		<array>
 			<dict>
 				<key>id</key>
+				<string>353786894</string>
+				<key>en</key>
+				<string>From Stands to Racing w/ Nando</string>
+				<key>es</key>
+				<string>De la Grada a Correr con Nano</string>
+				<key>es-MX</key>
+				<string>De la Grada a Correr con Nano</string>
+			</dict>
+			<dict>
+				<key>id</key>
+				<string>2222976084</string>
+				<key>en</key>
+				<string>In a Relationship w/ Hulk</string>
+				<key>es</key>
+				<string>Pareja de boxeo de Hulk</string>
+				<key>es-MX</key>
+				<string>Pareja de boxeo de Hulk</string>
+			</dict>
+			<dict>
+				<key>id</key>
+				<string>490756890</string>
+				<key>en</key>
+				<string>Checo&apos;s er, Teammate?</string>
+				<key>es</key>
+				<string>¿Compañero de Checo?</string>
+				<key>es-MX</key>
+				<string>¿Compañero de Checo?</string>
+			</dict>
+			<dict>
+				<key>id</key>
 				<string>301426313</string>
 				<key>en</key>
 				<string>Where L5s Used to Shine</string>
@@ -231,6 +261,46 @@
 		<array>
 			<dict>
 				<key>id</key>
+				<string>13382652</string>
+				<key>en</key>
+				<string>Have I done my predictions yet? 🤔</string>
+				<key>es</key>
+				<string>¿He hecho ya mis predicciones? 🤔</string>
+				<key>es-MX</key>
+				<string>¿He hecho ya mis predicciones? 🤔</string>
+			</dict>
+			<dict>
+				<key>id</key>
+				<string>194945814</string>
+				<key>en</key>
+				<string>Magnificent F1 Photographer</string>
+				<key>es</key>
+				<string>Mira sus 📸🏎 y hablamos</string>
+				<key>es-MX</key>
+				<string>Mira sus 📸🏎 y hablamos</string>
+			</dict>
+			<dict>
+				<key>id</key>
+				<string>19918839</string>
+				<key>en</key>
+				<string>Badass F1 Reporter for AMuS</string>
+				<key>es</key>
+				<string>Periodista F1 para AMuS</string>
+				<key>es-MX</key>
+				<string>Periodista F1 para AMuS</string>
+			</dict>
+			<dict>
+				<key>id</key>
+				<string>118342745</string>
+				<key>en</key>
+				<string>Blogger; Prev. Pro F-1 Photographer</string>
+				<key>es</key>
+				<string>José María Zapico, alias Zapi</string>
+				<key>es-MX</key>
+				<string>José María Zapico, alias Zapi</string>
+			</dict>
+			<dict>
+				<key>id</key>
 				<string>379086769</string>
 				<key>en</key>
 				<string>F-1 Opinions from the Paddock</string>
@@ -374,9 +444,19 @@
 		<array>
 			<dict>
 				<key>id</key>
+				<string>1937996600</string>
+				<key>en</key>
+				<string>⬆️ Read Above ⬆️</string>
+				<key>es</key>
+				<string>⬆️ Lee  ⬆️</string>
+				<key>es-MX</key>
+				<string>⬆️ Lee  ⬆️</string>
+			</dict>
+			<dict>
+				<key>id</key>
 				<string>219758387</string>
 				<key>en</key>
-				<string>F1 Tweep; Translates Media</string>
+				<string>F1 Tweep; German Media Translator</string>
 				<key>es</key>
 				<string>Tuitera F1; Traductora de Medios Alemanes</string>
 				<key>es-MX</key>
@@ -431,6 +511,8 @@
 		</array>
 		<key>press</key>
 		<array/>
+		<key>other</key>
+		<array/>
 	</dict>
 	<key>wrc</key>
 	<dict>
@@ -448,6 +530,8 @@
 			</dict>
 		</array>
 		<key>press</key>
+		<array/>
+		<key>other</key>
 		<array/>
 	</dict>
 	<key>wec</key>
@@ -467,6 +551,8 @@
 				<string>Cuenta Oficial</string>
 			</dict>
 		</array>
+		<key>other</key>
+		<array/>
 	</dict>
 </dict>
 </plist>

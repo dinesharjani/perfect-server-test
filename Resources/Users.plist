@@ -8,9 +8,19 @@
 		<array>
 			<dict>
 				<key>id</key>
+				<string>4852859639</string>
+				<key>en</key>
+				<string>FIA Top Dog</string>
+				<key>es</key>
+				<string>Actual Mandamás de la FIA</string>
+				<key>es-MX</key>
+				<string>Actual Mandamás de la FIA</string>
+			</dict>
+			<dict>
+				<key>id</key>
 				<string>353786894</string>
 				<key>en</key>
-				<string>From Stands to Racing w/ Nando</string>
+				<string>Kid Who Saw Nando Drive</string>
 				<key>es</key>
 				<string>De la Grada a Correr con Nano</string>
 				<key>es-MX</key>
@@ -180,7 +190,7 @@
 				<key>id</key>
 				<string>507672047</string>
 				<key>en</key>
-				<string>Nando Calrissian 🤷🏽‍♂️</string>
+				<string>#PlacesAlonsoWouldRatherBe</string>
 				<key>es</key>
 				<string>&quot;🎵El Nano aeee, El Nano aooo🎵&quot;</string>
 				<key>es-MX</key>
@@ -259,6 +269,86 @@
 		</array>
 		<key>press</key>
 		<array>
+			<dict>
+				<key>id</key>
+				<string>86740435</string>
+				<key>en</key>
+				<string>British Motorsports Presenter</string>
+				<key>es</key>
+				<string>Presentadora Británica</string>
+				<key>es-MX</key>
+				<string>Presentadora Británica</string>
+			</dict>
+			<dict>
+				<key>id</key>
+				<string>117042448</string>
+				<key>en</key>
+				<string>Spanish TV F1 Paddock Soldier</string>
+				<key>es</key>
+				<string>Soldado en el Paddock de Movistar</string>
+				<key>es-MX</key>
+				<string>Soldado en el Paddock de Movistar</string>
+			</dict>
+			<dict>
+				<key>id</key>
+				<string>265902729</string>
+				<key>en</key>
+				<string>Parent of BBC F-1 🤷🏽‍♂️</string>
+				<key>es</key>
+				<string>Matriz del Canal BBC F1</string>
+				<key>es-MX</key>
+				<string>Matriz del Canal BBC F1</string>
+			</dict>
+			<dict>
+				<key>id</key>
+				<string>148720585</string>
+				<key>en</key>
+				<string>Famous F1 Presenter in Spain</string>
+				<key>es</key>
+				<string>&quot;El Calvo de la Fórmula 1&quot;</string>
+				<key>es-MX</key>
+				<string>Famoso Presentador F1 en España</string>
+			</dict>
+			<dict>
+				<key>id</key>
+				<string>250613814</string>
+				<key>en</key>
+				<string>📸 All Kinds of Motorsport</string>
+				<key>es</key>
+				<string>📸 Toda Clase de Automovilismo</string>
+				<key>es-MX</key>
+				<string>📸 Toda Clase de Automovilismo</string>
+			</dict>
+			<dict>
+				<key>id</key>
+				<string>58444150</string>
+				<key>en</key>
+				<string>Don&apos;y Miss Anything He Writes</string>
+				<key>es</key>
+				<string>Grandísimo Periodista de la BBC F1</string>
+				<key>es-MX</key>
+				<string>Grandísimo Periodista de la BBC F1</string>
+			</dict>
+			<dict>
+				<key>id</key>
+				<string>56652148</string>
+				<key>en</key>
+				<string>&quot;Irony is My Second Name&quot;</string>
+				<key>es</key>
+				<string>La Ironía Es lo Suyo</string>
+				<key>es-MX</key>
+				<string>La Ironía Es lo Suyo</string>
+			</dict>
+			<dict>
+				<key>id</key>
+				<string>1221908557</string>
+				<key>en</key>
+				<string>Another American TV following F-1</string>
+				<key>es</key>
+				<string>Otra TV Americana Siguendo la F1</string>
+				<key>es-MX</key>
+				<string>Otra TV Americana Siguendo la F1</string>
+			</dict>
 			<dict>
 				<key>id</key>
 				<string>13382652</string>
@@ -488,6 +578,16 @@
 	<dict>
 		<key>paddock</key>
 		<array>
+			<dict>
+				<key>id</key>
+				<string>18156714</string>
+				<key>en</key>
+				<string>Home of Some Fancy Bricks</string>
+				<key>es</key>
+				<string>Hogar de Unos Curiosos Ladrillos</string>
+				<key>es-MX</key>
+				<string>Hogar de Unos Curiosos Ladrillos</string>
+			</dict>
 			<dict>
 				<key>id</key>
 				<string>125832497</string>

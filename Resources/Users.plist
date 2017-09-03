@@ -8,9 +8,29 @@
 		<array>
 			<dict>
 				<key>id</key>
+				<string>213969309</string>
+				<key>en</key>
+				<string>Stevenage&apos;s Very Own</string>
+				<key>es</key>
+				<string>Rompe-Récords de Stevenage</string>
+				<key>es-MX</key>
+				<string>Rompe-Récords de Stevenage</string>
+			</dict>
+			<dict>
+				<key>id</key>
+				<string>115044590</string>
+				<key>en</key>
+				<string>Retired After Beating Lewis</string>
+				<key>es</key>
+				<string>Retirado Tras Ser 🤴🏼🌎</string>
+				<key>es-MX</key>
+				<string>Retirado Tras Ser 🤴🏼🌎</string>
+			</dict>
+			<dict>
+				<key>id</key>
 				<string>4852859639</string>
 				<key>en</key>
-				<string>FIA Top Dog</string>
+				<string>FIA Top 🐶</string>
 				<key>es</key>
 				<string>Actual Mandamás de la FIA</string>
 				<key>es-MX</key>
@@ -269,6 +289,26 @@
 		</array>
 		<key>press</key>
 		<array>
+			<dict>
+				<key>id</key>
+				<string>381691298</string>
+				<key>en</key>
+				<string>RaimonDuran</string>
+				<key>es</key>
+				<string>Agencia de Fotografía Histórica</string>
+				<key>es-MX</key>
+				<string>Agencia de Fotografía Histórica</string>
+			</dict>
+			<dict>
+				<key>id</key>
+				<string>22903129</string>
+				<key>en</key>
+				<string>Historic F-1 Picture Agency</string>
+				<key>es</key>
+				<string>Agencia de Fotografía Histórica</string>
+				<key>es-MX</key>
+				<string>Agencia de Fotografía Histórica</string>
+			</dict>
 			<dict>
 				<key>id</key>
 				<string>86740435</string>

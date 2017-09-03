@@ -20,9 +20,12 @@ public class UsersEndpoint : NSObject {
         case English = "en"
         case Spanish = "es"
         case Mexican = "es-MX"
+        case All = "all-languages"
         
         static func isValidLanguage(_ language: String) -> Bool {
-            if language == Language.English.rawValue {
+            if language == Language.All.rawValue {
+                return true
+            } else if language == Language.English.rawValue {
                 return true
             } else if language == Language.Spanish.rawValue {
                 return true
@@ -102,6 +105,10 @@ public class UsersEndpoint : NSObject {
     }
     
     public func filter(users: [[String : String]], language : String) -> [[String : String]] {
+        guard language != Language.All.rawValue else {
+            return users;
+        }
+        
         var filteredUsers = [[String : String]]()
         for user in users {
             var filteredUser = user
@@ -123,6 +130,6 @@ public class UsersEndpoint : NSObject {
             }
         }
         
-        return "en"
+        return Language.All.rawValue
     }
 }
